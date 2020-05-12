@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
                 tv_name.text = acct?.displayName
                 tv_name.visibility = View.VISIBLE
                 tv_token.text = acct?.idToken
+                Log.v("tokenid", acct.idToken)
             }
         }
 
