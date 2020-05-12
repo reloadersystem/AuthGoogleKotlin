@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            // .requestIdToken(getString(R.string.default_web_client_id))
+           .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
                 val personId = acct.id
                 val personPhoto = acct.photoUrl
 
-                sign_in_button.visibility= View.GONE
+                sign_in_button.visibility = View.GONE
                 tv_name.text = acct?.displayName
-                tv_name.visibility= View.VISIBLE
+                tv_name.visibility = View.VISIBLE
                 tv_token.text = acct?.idToken
             }
         }
@@ -75,19 +75,20 @@ class MainActivity : AppCompatActivity() {
 
             Log.v("name", account?.displayName)
 
-            sign_in_button.visibility= View.GONE
+            sign_in_button.visibility = View.GONE
             tv_name.text = account?.displayName
-            tv_name.visibility= View.VISIBLE
+            tv_name.visibility = View.VISIBLE
             tv_token.text = account?.idToken
+            //tv_token.text = account.idToken
 
 
         } catch (e: ApiException) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("errorException", "signInResult:failed code=" + e.statusCode)
-            sign_in_button.visibility= View.VISIBLE
+            sign_in_button.visibility = View.VISIBLE
             tv_name.text = ""
-            tv_name.visibility= View.GONE
+            tv_name.visibility = View.GONE
 
         }
 

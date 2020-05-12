@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textSize="30sp"
-        tools:text="responsetoken"></TextView>
+        tools:text="token"></TextView>
 
 </RelativeLayout>
