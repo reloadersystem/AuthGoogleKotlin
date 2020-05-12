@@ -2,4 +2,5 @@
     <string name="app_name">AuthGoogleKotlin</string>
     <string name="default_web_client_id">611733410970-eehb8n5751l71o1tofq77qaem6hp5ki5.apps.googleusercontent.com</string>
 
+    <string name="servidor_ruta">https://classroom.googleapis.com</string>
 </resources>

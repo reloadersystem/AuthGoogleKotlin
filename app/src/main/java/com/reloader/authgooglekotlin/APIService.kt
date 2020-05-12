@@ -2,17 +2,18 @@ package com.reloader.authgooglekotlin
 
 import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface APIService {
 
-    @FormUrlEncoded
-    @POST("users/login")
-    fun postRegistrarUsuario(
-        @Field("email") email: String,
-        @Field("password") password: String
+    //    @FormUrlEncoded
+    @GET("courses?")
+    fun getCursosMail(
+        @Query("courseStates") courseStates: String,
+        @Query("studentId") studentId: String,
+        @Query("teacherId") teacherId: String,
+        @Query("access_token") access_token: String
     ): Call<ResponseBody>
 
 }

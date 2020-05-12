@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-           .requestIdToken(getString(R.string.default_web_client_id))
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
@@ -50,7 +50,15 @@ class MainActivity : AppCompatActivity() {
                 tv_name.text = acct?.displayName
                 tv_name.visibility = View.VISIBLE
                 tv_token.text = acct?.idToken
-                Log.v("tokenid", acct.idToken)
+
+
+                val tokencaptcha:String = acct.idToken.toString()
+               // Log.v("tokenid", tokencaptcha)
+
+                val intent = Intent(this, ClassroomActivity::class.java).apply {
+                    putExtra("tokenID", tokencaptcha)
+                }
+                startActivity(intent)
             }
         }
 
